@@ -1,8 +1,8 @@
 
 import { IAction, IAddToDoAction, IToggleTodo } from '../types';
-import { ToDo } from '../models';
+import { TodoItem } from '../models';
 
-function todos(state: ToDo[] = [], action: IAction): ToDo[] {
+function todos(state: TodoItem[] = [], action: IAction): TodoItem[] {
   switch (action.type) {
     case 'ADD_TODO':
       const { id, text } = action as IAddToDoAction;
