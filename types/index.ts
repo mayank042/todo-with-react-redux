@@ -16,3 +16,5 @@ export interface ISetFilter extends IAction {
 export interface IToggleTodo extends IAction {
   id: number
 }
+
+export type Dispatch = (action: IAction) => void;

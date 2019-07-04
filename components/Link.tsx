@@ -2,7 +2,7 @@ import React from 'react';
 
 interface LinkProps {
   active: boolean;
-  children: Node;
+  children: string;
   onClick: () => void;
 }
 

@@ -6,9 +6,21 @@ let nextTodoId = 0;
 export type TVisibilityFilters = 'SHOW_ALL' | 'SHOW_COMPLETED' | 'SHOW_ACTIVE';
 export type TAction = 'ADD_TODO' | 'SET_VISIBILITY_FILTER' | 'TOGGLE_TODO';
 
-export function addTodo(text): IAddToDoAction {
+export const Actions = {
+  ADD_TODO: 'ADD_TODO' as TAction,
+  TOGGLE_TODO: 'TOGGLE_TODO' as TAction,
+  SET_VISIBILITY_FILTER: 'SET_VISIBILITY_FILTER' as TAction
+}
+
+export const VisibilityFilters = {
+  SHOW_ALL: 'SHOW_ALL' as TVisibilityFilters,
+  SHOW_COMPLETED: 'SHOW_COMPLETED' as TVisibilityFilters,
+  SHOW_ACTIVE: 'SHOW_ACTIVE' as TVisibilityFilters
+}
+
+export function addTodo(text: string): IAddToDoAction {
   return {
-    type: 'ADD_TODO',
+    type: Actions.ADD_TODO,
     id: nextTodoId + 1,
     text
   }
@@ -16,20 +28,14 @@ export function addTodo(text): IAddToDoAction {
 
 export function setVisibilityFilter(filter: TVisibilityFilters): ISetFilter {
   return {
-    type: 'SET_VISIBILITY_FILTER',
+    type: Actions.SET_VISIBILITY_FILTER,
     filter
   }
 }
 
-export function toggleTodo(id): IToggleTodo {
+export function toggleTodo(id: number): IToggleTodo {
   return {
-    type: 'TOGGLE_TODO',
+    type: Actions.TOGGLE_TODO,
     id
   }
-}
-
-export const VisibilityFilters: { [key: string]: TVisibilityFilters } = {
-  SHOW_ALL: 'SHOW_ALL',
-  SHOW_COMPLETED: 'SHOW_COMPLETED',
-  SHOW_ACTIVE: 'SHOW_ACTIVE'
 }

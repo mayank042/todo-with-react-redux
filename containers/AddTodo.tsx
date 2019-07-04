@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addTodo } from '../actions';
+import { Dispatch } from '../types';
 
-function AddTodo({ dispatch }) {
+function AddTodo({ dispatch }: { dispatch: Dispatch }) {
   let input: HTMLInputElement;
 
   return (

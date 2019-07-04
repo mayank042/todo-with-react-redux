@@ -1,20 +1,27 @@
 
 import { IAction, IAddToDoAction, IToggleTodo } from '../types';
 import { TodoItem } from '../models';
+import { Actions } from '../actions';
 
 function todos(state: TodoItem[] = [], action: IAction): TodoItem[] {
   switch (action.type) {
-    case 'ADD_TODO':
-      const { id, text } = action as IAddToDoAction;
+    case Actions.ADD_TODO:
       return [
-        ...state,
-        { id, text, completed: false }
+        ...state, {
+          id: 1,
+          text: (action as IAddToDoAction).text,
+          completed: false
+        }
       ]
-    case 'TOGGLE_TODO':
-      return state.map(
-        todo =>
-          todo.id === (action as IToggleTodo).id ? { ...todo, completed: !todo.completed } : todo
-      )
+    case Actions.TOGGLE_TODO:
+      return state.map((todo) => {
+        if (todo.id === (action as IToggleTodo).id) {
+          return Object.assign({}, todo, {
+            completed: !todo.completed
+          })
+        }
+        return todo
+      })
     default:
       return state;
   }

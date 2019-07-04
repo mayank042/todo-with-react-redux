@@ -4,13 +4,13 @@ import Todo from './todo';
 
 interface TodoListProps {
   todos: TodoItem[];
-  toggleTodo: (id: number) => void;
+  onTodoClick: (id: number) => void;
 }
 
-const TodoList: React.SFC<TodoListProps> = ({ todos, toggleTodo }) => (
+const TodoList: React.SFC<TodoListProps> = ({ todos, onTodoClick }) => (
   <ul>
     {todos.map(todo => (
-      <Todo key={todo.id} {...todo} onClick={() => toggleTodo(todo.id)} />
+      <Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />
     ))}
   </ul>
 );
