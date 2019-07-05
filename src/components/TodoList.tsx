@@ -7,7 +7,7 @@ interface TodoListProps {
   onTodoClick: (id: number) => void;
 }
 
-const TodoList: React.SFC<TodoListProps> = ({ todos, onTodoClick }) => (
+const TodoList: React.FC<TodoListProps> = ({ todos, onTodoClick }) => (
   <ul>
     {todos.map(todo => (
       <Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />

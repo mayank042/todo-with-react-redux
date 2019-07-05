@@ -6,7 +6,7 @@ interface LinkProps {
   onClick: () => void;
 }
 
-const Link: React.SFC<LinkProps> = ({ active, children, onClick }) => {
+const Link: React.FC<LinkProps> = ({ active, children, onClick }) => {
   if (active) {
     return <span>{children}</span>;
   }

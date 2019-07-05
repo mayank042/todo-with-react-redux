@@ -6,7 +6,7 @@ interface TodoProps {
   text: string;
 }
 
-const Todo: React.SFC<TodoProps> = ({ onClick, completed, text }) => (
+const Todo: React.FC<TodoProps> = ({ onClick, completed, text }) => (
   <li
     onClick={onClick}
     style={{
