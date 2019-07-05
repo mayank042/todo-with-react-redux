@@ -4,12 +4,15 @@ import { addTodo } from '../actions';
 import { Dispatch } from '../types';
 
 function AddTodo({ dispatch }: { dispatch: Dispatch }) {
-  let input: HTMLInputElement;
+  let input: HTMLInputElement | null;
 
   return (
     <div>
       <form
         onSubmit={e => {
+          if (!input) {
+            return;
+          }
           e.preventDefault();
           if (!input.value.trim()) {
             return;

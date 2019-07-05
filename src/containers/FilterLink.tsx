@@ -4,14 +4,6 @@ import { setVisibilityFilter, TVisibilityFilters } from '../actions';
 import { Dispatch } from '../types';
 import { State } from '../reducers';
 
-interface StateFromProps {
-  active: boolean;
-}
-
-interface DispatchFromProps {
-  onClick: () => void;
-}
-
 interface FilterLinkProps {
   filter: TVisibilityFilters;
 }
@@ -30,7 +22,7 @@ const mapDispatchToProps = (dispatch: Dispatch, ownProps: FilterLinkProps) => {
   };
 };
 
-const FilterLink = connect<StateFromProps, DispatchFromProps, FilterLinkProps>(
+const FilterLink = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Link);

@@ -39,7 +39,7 @@ function mapDispatchToProps(dispatch: Dispatch): DispatchFromProps {
   };
 }
 
-const VisibleTodoList = connect<StateFromProps, DispatchFromProps>(
+const VisibleTodoList = connect(
   mapStateToProps,
   mapDispatchToProps
 )(TodoList);

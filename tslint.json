@@ -5,6 +5,7 @@
     ],
     "jsRules": {},
     "rules": {
+        "jsx-no-multiline-js": false,
         "member-access": false,
         "ordered-imports": false,
         "quotemark": false,
