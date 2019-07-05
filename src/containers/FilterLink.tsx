@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import Link from '../components/Link';
-import { setVisibilityFilter, TVisibilityFilters } from '../actions';
+import { setVisibilityFilter } from '../actions';
 import { Dispatch } from '../types';
 import { State } from '../reducers';
+import { TVisibilityFilters } from '../constants';
 
 interface FilterLinkProps {
   filter: TVisibilityFilters;

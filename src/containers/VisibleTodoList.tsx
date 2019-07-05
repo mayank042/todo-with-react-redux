@@ -3,7 +3,8 @@ import TodoList from '../components/TodoList';
 import { State } from '../reducers';
 import { Dispatch } from '../types';
 import { TodoItem } from '../models';
-import { TVisibilityFilters, VisibilityFilters, toggleTodo } from '../actions';
+import { toggleTodo } from '../actions';
+import { VisibilityFilters, TVisibilityFilters } from '../constants';
 
 interface StateFromProps {
   todos: TodoItem[];

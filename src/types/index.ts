@@ -1,20 +1,28 @@
-import { TVisibilityFilters, TAction } from '../actions';
+import { TAction, TVisibilityFilters } from '../constants';
 
 export interface IAction {
   type: TAction;
+  payload: object;
 }
 
 export interface IAddToDoAction extends IAction {
-  id: number;
-  text: string;
+  payload: {
+    id: number;
+    text: string;
+  }
 }
 
 export interface ISetFilter extends IAction {
-  filter: TVisibilityFilters
+  payload: {
+    filter: TVisibilityFilters
+  }
 }
 
 export interface IToggleTodo extends IAction {
-  id: number
+  payload: {
+    id: number
+  }
 }
+
 
 export type Dispatch = (action: IAction) => void;

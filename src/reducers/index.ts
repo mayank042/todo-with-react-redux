@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import todos from './todos';
 import visibilityFilter from './visibilityFilter';
-import { TVisibilityFilters } from '../actions';
 import { TodoItem } from '../models';
+import { TVisibilityFilters } from '../constants';
 
 export interface State {
   visibilityFilter: TVisibilityFilters,
