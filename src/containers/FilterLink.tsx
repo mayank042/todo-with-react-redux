@@ -16,11 +16,11 @@ interface FilterLinkProps {
   filter: TVisibilityFilters;
 }
 
-function mapStateToProps(state: State, ownProps: FilterLinkProps) {
+const mapStateToProps = (state: State, ownProps: FilterLinkProps) => {
   return {
     active: ownProps.filter === state.visibilityFilter
   };
-}
+};
 
 const mapDispatchToProps = (dispatch: Dispatch, ownProps: FilterLinkProps) => {
   return {

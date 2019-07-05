@@ -3,7 +3,7 @@ import AddTodo from '../containers/AddTodo';
 import VisibleTodoList from '../containers/VisibleTodoList';
 import Footer from './Footer';
 
-function App() {
+function TodoApp() {
   return (
     <div>
       <AddTodo />
@@ -13,4 +13,4 @@ function App() {
   );
 }
 
-export default App;
+export default TodoApp;
